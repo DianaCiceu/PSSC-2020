@@ -8,9 +8,9 @@ Triggered by: "Post question request received"
  -Output: "Question posted" event
 
 Workflows documentation
-● Workflow: "Post Question"
-○ Input: "Question form"
-○ Output: "Question posted" event or Invalid question form
+ Workflow: "Post Question"
+ -Input: "Question form"
+ -Output: "Question posted" event or Invalid question form
 //step1
 Do validate question form
 If form is invalid then
