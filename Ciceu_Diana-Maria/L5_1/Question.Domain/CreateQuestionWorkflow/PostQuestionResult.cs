@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,41 +11,32 @@ namespace Question.Domain.CreateQuestionWorkflow
     {
         public interface IPostQuestionResult { }
 
-        public class QuestionPosted: IPostQuestionResult
+        public class QuestionPosted : IPostQuestionResult
         {
             public Guid QuestionId { get; private set; }
             public string Title { get; set; }
 
-            // public int VoteCount { get; private set; }
-            // public IReadOnlyCollection<VoteEnum> AllVotes { get; private set; }
-            public QuestionPosted(Guid questionId, string title)
-            {
-             
-                QuestionId = questionId;
-                Title = title;
+            public int VoteCount { get; private set; }
+            public IReadOnlyCollection<VoteEnum> AllVotes { get; private set; }
 
-            }
 
-            /* public QuestionPosted(Guid questionId, string title, IReadOnlyCollection<VoteEnum> votes,int votecount)
+             public QuestionPosted(Guid questionId, string title, IReadOnlyCollection<VoteEnum> votes,int votecount)
              {
                  AllVotes = votes;
                  VoteCount = votecount;
                  QuestionId = questionId;
                  Title = title;
 
-             }*/
-
-            /*
-            public QuestionPosted(Guid questionId,string title,string text,string[] tag)
+             }
+            public QuestionPosted(IReadOnlyCollection<VoteEnum> votes, int votecount)
             {
-                QuestionId = questionId;
-                Title = title;
-                Text = text;              
-                Tag = tag;
-            }*/
+                AllVotes = votes;
+                VoteCount = votecount;
+            }
+
         }
 
-        public class QuestionNotPosted: IPostQuestionResult
+        public class QuestionNotPosted : IPostQuestionResult
         {
             public string Reason { get; set; }
 
@@ -55,7 +46,7 @@ namespace Question.Domain.CreateQuestionWorkflow
             }
         }
 
-        public class QuestionValidationFailed: IPostQuestionResult
+        public class QuestionValidationFailed : IPostQuestionResult
         {
             public IEnumerable<string> ValidationErrors { get; private set; }
 
@@ -64,34 +55,24 @@ namespace Question.Domain.CreateQuestionWorkflow
                 ValidationErrors = errors.AsEnumerable();
             }
         }
-       /* public enum VoteEnum
+    
+       public enum VoteEnum
         {
             Up = 1,
             Down = -1
         }
-        public class Votes
-        {
-            public int VoteCount { get; private set; }
-            public IReadOnlyCollection<VoteEnum> AllVotes { get; private set; }
-            public Votes(IReadOnlyCollection<VoteEnum> votes, int votecount)
-            {
-                AllVotes = votes;
-                VoteCount = votecount;
-
-            }
-        }
+     
         public class UpdateVotes
         {
-            //
-            public QuestionPosted Update(QuestionPosted quest, int qId, decimal newSum)
+            //adds new vote to AllVotes list and then changes the score
+            public QuestionPosted Update(QuestionPosted quest, VoteEnum vote)
             {
-                //var newLines = quest.AllVotes.Where(line => line.OrderLineId != lineId).ToList();
-               // var lineToBeUpdated = quest.AllVotes.First(line => line.OrderLineId == lineId);
-               // var newLine = new VoteEnum(lineId, lineToBeUpdated.ProductId, newPrice);
-               // newLines.Add(newLine);
+                
+                var lines = quest.AllVotes.ToList();
+                lines.Add(vote);
 
-                return new QuestionPosted(newLines, newLines.Sum(line => line.Price));
-            }*/
+                return new QuestionPosted(quest.QuestionId, quest.Title,lines, lines.Sum());
+            }
         }
     }
 }
