@@ -1,0 +1,9 @@
+D:\Facultate\PSSC-2020\Ciceu_Diana-Maria\L5\Primitives.IO\bin\Debug\netstandard2.0\Primitives.IO.deps.json
+D:\Facultate\PSSC-2020\Ciceu_Diana-Maria\L5\Primitives.IO\bin\Debug\netstandard2.0\Primitives.IO.dll
+D:\Facultate\PSSC-2020\Ciceu_Diana-Maria\L5\Primitives.IO\bin\Debug\netstandard2.0\Primitives.IO.pdb
+D:\Facultate\PSSC-2020\Ciceu_Diana-Maria\L5\Primitives.IO\obj\Debug\netstandard2.0\Primitives.IO.csprojAssemblyReference.cache
+D:\Facultate\PSSC-2020\Ciceu_Diana-Maria\L5\Primitives.IO\obj\Debug\netstandard2.0\Primitives.IO.AssemblyInfoInputs.cache
+D:\Facultate\PSSC-2020\Ciceu_Diana-Maria\L5\Primitives.IO\obj\Debug\netstandard2.0\Primitives.IO.AssemblyInfo.cs
+D:\Facultate\PSSC-2020\Ciceu_Diana-Maria\L5\Primitives.IO\obj\Debug\netstandard2.0\Primitives.IO.csproj.CoreCompileInputs.cache
+D:\Facultate\PSSC-2020\Ciceu_Diana-Maria\L5\Primitives.IO\obj\Debug\netstandard2.0\Primitives.IO.dll
+D:\Facultate\PSSC-2020\Ciceu_Diana-Maria\L5\Primitives.IO\obj\Debug\netstandard2.0\Primitives.IO.pdb
