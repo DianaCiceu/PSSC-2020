@@ -1,0 +1,40 @@
+
+Bounded context: "question context"
+
+Workflow: "Post question"
+Triggered by: "Post question request received"
+ -Input: "Question form" (Display question, tag)
+ -Other inputs(dependencies)
+ -Output: "Question posted" event
+
+Workflows documentation
+● Workflow: "Post Question"
+○ Input: "Question form"
+○ Output: "Question posted" event or Invalid question form
+//step1
+Do validate question form
+If form is invalid then
+stop
+//step2
+Do analyze text via an ML
+if text is within acceptance criteria
+//step3
+send posted message
+return "Question posted" event
+//step4
+else if result is not clear
+//step5
+propose question for manual review
+else
+//step6
+sent rejection message
+
+Workflows documentation
+ Substep "Validate question form"
+	-input: "Unvalidated question form"
+	-output: "Validated question form"
+	-validate the text
+	-check if the question does not already exist
+ If all validations passed then
+ return validated question form
+ Else return Validation error
